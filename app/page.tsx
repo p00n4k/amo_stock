@@ -139,7 +139,7 @@ const Page = () => {
 
   return (
     <div className="px-10 py-10">
-      <h1 className="title">Amo</h1>
+      <h1 className="title">Amo V2</h1>
       <form className="form" onSubmit={handleSearch}>
 
         {/* Product ID Section */}
