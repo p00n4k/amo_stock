@@ -7,6 +7,20 @@ const layout = ({ children }: { children: ReactNode }) => {
     <html>
       <head>
         <title>My App</title>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link
+          rel="icon"
+          href="/icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/apple-icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+
       </head>
       <body >
         <div className=''></div>
