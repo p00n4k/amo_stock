@@ -15,11 +15,10 @@
   h5 {
     @apply text-lg font-light text-blue-500 text-xs  mb-1.5;
   }
-
 }
 
 @layer components {
-  .title{
+  .title {
     @apply text-xs font-semibold text-center;
   }
 }
@@ -58,7 +57,7 @@
 
 #root {
   max-width: 1280px;
-  margin:  20;
+  margin: 20;
   padding: 2rem;
 }
 
@@ -134,7 +133,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 10px 1000px;
   cursor: pointer;
   border-radius: 5px;
   justify-items: center;
@@ -335,4 +334,3 @@ hr {
   font-size: 16px;
   flex: 1; /* Optional: Makes the input take up remaining space */
 }
-

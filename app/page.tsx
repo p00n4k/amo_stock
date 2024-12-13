@@ -215,7 +215,7 @@ const Page = () => {
         </div>
 
         {/* Warehouse Section */}
-        <div className="form-section mb-2">
+        <div className="form-section mb-3">
           <h5 className="mt-2">รหัสคลัง</h5>
           <select
             value={warehouseIdInput}
