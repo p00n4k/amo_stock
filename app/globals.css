@@ -1,0 +1,338 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white; /* or any color class you prefer */
+  }
+  input {
+    @apply block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
+  }
+  select {
+    @apply block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
+  }
+  h5 {
+    @apply text-lg font-light text-blue-500 text-xs  mb-1.5;
+  }
+
+}
+
+@layer components {
+  .title{
+    @apply text-xs font-semibold text-center;
+  }
+}
+
+.button-submit {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.label-product {
+  font-size: 25px;
+  font-weight: bold;
+}
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 1280px;
+  margin:  20;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.productid-head {
+  background-color: rgb(218, 179, 255);
+  border-radius: 5px;
+  padding: 5px;
+}
+.productname-head {
+  background-color: rgb(179, 218, 255);
+  border-radius: 5px;
+  padding: 5px;
+}
+.producttotal-head {
+  background-color: rgb(255, 179, 218);
+  border-radius: 5px;
+  padding: 5px;
+}
+.warehouse_id-head {
+  background-color: rgb(196, 254, 162);
+  border-radius: 5px;
+  padding: 5px;
+}
+.warehouse_name-head {
+  background-color: rgb(255, 255, 179);
+  border-radius: 5px;
+  padding: 5px;
+}
+.product-sequence-head {
+  background-color: rgba(255, 239, 97, 0.728);
+  border-radius: 5px;
+  padding: 5px;
+}
+.circle-number {
+  display: inline-block;
+  width: 30px; /* Adjust the size of the circle */
+  height: 30px; /* Adjust the size of the circle */
+  border-radius: 50%;
+  background-color: #007bff; /* Change to any color you like */
+  color: white; /* Text color */
+  text-align: center;
+  line-height: 30px; /* Vertically center the text */
+  font-weight: bold; /* Optional: makes the number bold */
+}
+
+.productid {
+  margin: 15px 0;
+}
+.productname {
+  margin: 15px 0;
+}
+.producttotal {
+  margin: 15px 0;
+}
+.warehouse_id {
+  margin: 20px 0;
+}
+.warehouse_name {
+  margin: 20px 0;
+}
+
+.btn {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  justify-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+input {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.btn-change {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 5px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  justify-items: center;
+}
+
+.btn-productname {
+  background-color: #33898f;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  justify-items: center;
+}
+
+.productname {
+  max-width: 100%; /* Adjust max-width as needed */
+  word-wrap: break-word;
+  line-height: 2;
+}
+
+hr {
+  margin: 5px 0;
+}
+
+.section-header {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.product_quantity {
+  font-weight: 900;
+  font-size: 18px;
+  color: #1100ff;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px; /* Adjust height as needed */
+  font-size: 1.2rem; /* Adjust font size as needed */
+  color: #333; /* Adjust color as needed */
+}
+/* Style the container of the pagination */
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Style the buttons */
+.pagination-button {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+  padding: 8px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+/* Hover effect for buttons */
+.pagination-button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Disable button style */
+.pagination-button:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Style the page indicator */
+.page-indicator {
+  font-size: 14px;
+  color: #333;
+  margin: 0 10px;
+}
+
+/* Add some padding and margin to the container */
+.pagination-container {
+  padding: 10px;
+  margin: 20px 0;
+}
+/* Error message styles */
+/* App.css */
+.error-message {
+  color: red;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.loading {
+  position: fixed; /* Makes the loading message fixed on the screen */
+  top: 50%; /* Center it vertically */
+  left: 50%; /* Center it horizontally */
+  transform: translate(-50%, -50%); /* Fine-tunes the centering */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  color: white; /* White text color */
+  padding: 20px 30px; /* Padding around the text */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Font size */
+  font-weight: bold; /* Bold text */
+  z-index: 9999; /* Ensures it appears on top of other elements */
+  text-align: center; /* Centers the text */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+  animation: fadeIn 0.3s ease-out; /* Optional fade-in animation */
+}
+
+/* Optional fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.header {
+  font-size: 15px; /* Adjust the font size */
+  font-weight: bold; /* Make the text bold */
+  text-align: center; /* Center align the text */
+  color: #333; /* Text color */
+  background-color: #f5f5f5; /* Background color */
+  padding: 10px; /* Add padding around the text */
+  border-bottom: 2px solid #ccc; /* Optional border for separation */
+  margin-bottom: 20px; /* Add spacing below the header */
+}
+.quantity-filter-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.quantity-filter-button.greater {
+  background-color: #4caf50;
+  color: white;
+}
+
+.quantity-filter-button.less {
+  background-color: #f44336;
+  color: white;
+}
+
+.quantity-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the button and input */
+}
+
+.quantity-filter-button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.quantity-input {
+  padding: 8px;
+  font-size: 16px;
+  flex: 1; /* Optional: Makes the input take up remaining space */
+}
+
