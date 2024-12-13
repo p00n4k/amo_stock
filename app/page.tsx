@@ -175,13 +175,15 @@ const Page = () => {
           <div className="quantity-filter-container">
             {/* Button */}
             <button
-              onClick={() =>
-                setQuantityFilter((prev) => (prev === "greater" ? "less" : "greater"))
-              }
+              onClick={(e) => {
+                e.preventDefault();  // Prevent page reload
+                setQuantityFilter((prev) => (prev === "greater" ? "less" : "greater"));
+              }}
               className={`quantity-filter-button ${quantityFilter === "greater" ? "greater" : "less"}`}
             >
               {quantityFilter === "greater" ? "มากกว่า" : "น้อยกว่า"}
             </button>
+
 
             {/* Input */}
             <input
