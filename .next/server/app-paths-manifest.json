@@ -1,3 +1,4 @@
 {
+  "/api/amo-stock/route": "app/api/amo-stock/route.js",
   "/page": "app/page.js"
 }
