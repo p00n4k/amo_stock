@@ -6,7 +6,7 @@ const layout = ({ children }: { children: ReactNode }) => {
   return (
     <html>
       <head>
-        <title>My App</title>
+        <title>Amo Stock</title>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link
           rel="icon"
