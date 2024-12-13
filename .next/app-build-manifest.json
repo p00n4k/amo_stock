@@ -21,10 +21,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/api/unit/route.js"
     ],
-    "/api/amo-stock/route": [
+    "/api/update-time/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/api/amo-stock/route.js"
+      "static/chunks/app/api/update-time/route.js"
     ]
   }
 }

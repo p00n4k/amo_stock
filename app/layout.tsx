@@ -1,12 +1,16 @@
 import React from 'react'
 import "./globals.css";
 import { ReactNode } from 'react';
+import { Prompt } from 'next/font/google'
 
 const layout = ({ children }: { children: ReactNode }) => {
   return (
     <html>
+
       <head>
         <title>Amo Stock V.2</title>
+
+
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link
           rel="icon"
@@ -20,6 +24,7 @@ const layout = ({ children }: { children: ReactNode }) => {
           type="image/<generated>"
           sizes="<generated>"
         />
+
 
       </head>
       <body >

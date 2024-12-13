@@ -16,6 +16,8 @@ const Page = () => {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [latestTime, setLatestTime] = useState<string | null>(null);
+
 
   // Fetch warehouse IDs for the dropdown
   const fetchWarehouseOptions = async () => {
@@ -92,6 +94,21 @@ const Page = () => {
   }
     , []);
 
+
+  useEffect(() => {
+    const fetchLatestTime = () => {
+      const currentDate = new Date().toLocaleDateString('en-GB', { timeZone: 'Asia/Bangkok' }); // Convert UTC to Thailand Time (Asia/Bangkok) and only show date
+      setLatestTime(currentDate);
+    };
+
+    fetchLatestTime(); // Fetch the date immediately after the component mounts
+    const intervalId = setInterval(fetchLatestTime, 86400000); // Update date every day
+
+    return () => clearInterval(intervalId); // Clean up the interval when the component unmounts
+  }, []);
+
+
+
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -140,6 +157,9 @@ const Page = () => {
   return (
     <div className="px-10 py-10">
       <h1 className="title">Amo V2</h1>
+      <p className="latest-time">
+        {latestTime ? `อัปเดตล่าสุดวันที่: ${latestTime}` : 'Loading time...'}
+      </p>
       <form className="form" onSubmit={handleSearch}>
 
         {/* Product ID Section */}
