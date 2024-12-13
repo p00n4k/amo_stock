@@ -258,6 +258,15 @@ const Page = () => {
         <button type="submit" className="btn">ค้นหา</button>
       </form>
 
+      <div className="flex justify-center">
+        <div className="pagenumber">
+          หน้า {page}
+        </div>
+      </div>
+
+
+
+
       {loading && <div className="loading">Loading...</div>}
       {error && <p className="error-message">{error}</p>}
       {productData.map((product, index) => (
