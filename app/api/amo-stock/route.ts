@@ -71,19 +71,33 @@ export async function POST(request: NextRequest) {
       limit.toString(),
       offset.toString(),
     ];
-
+    
+    
     // Execute the query
     const [rows] = await connection.execute(query, queryParams);
 
-    // Second query to get total number of rows
-    const [totalRows] = await connection.execute('SELECT FOUND_ROWS() AS total');
-    const total = (totalRows as any)[0].total;
+    interface Product {
+      product_id: number;
+      product_stock_id: string;
+      product_detail: string;
+      product_quantity: number;
+      product_unit: string;
+      warehouse_id: string;
+      warehouse_name: string;
+      total: number;
 
-    // If no products are found
-    if ((rows as any[]).length === 0) {
-      return NextResponse.json({ message: 'No products found' }, { status: 204 });
     }
+// Execute the query and cast the result to the expected type.
+const [totalRows] = await connection.execute('SELECT FOUND_ROWS() AS total');
+const total = (totalRows as Product[])[0].total;
 
+
+
+    
+    if ((rows as Product[]).length === 0) {
+      return NextResponse.json({ message: 'No products found' }, { status: 404 });
+    }
+    
     // Return successful response
     return NextResponse.json({ products: rows, total }, { status: 200 });
 

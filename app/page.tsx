@@ -55,13 +55,16 @@ const Page = () => {
         body: JSON.stringify({ ...body, page, limit: 30 }),
       });
 
-      if (!response.ok) throw new Error('Failed to fetch product data');
-      if (response.status === 204) {
-        setProductData([]);
-        setError('ไม่พบสินค้าตรงกับข้อมูลที่ค้นหา กรุณาลองใหม่อีกครั้ง');
-        setTotalPages(1);
-        return;
+      if (!response.ok) {
+        if (response.status === 404) {
+          setProductData([]);
+          setError('ไม่พบสินค้าตรงกับข้อมูลที่ค้นหา กรุณาลองใหม่อีกครั้ง');
+          setTotalPages(1);
+          return;
+        }
+        throw new Error('Failed to fetch product data');
       }
+
 
       const data = await response.json();
       setProductData(data.products);
