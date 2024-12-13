@@ -1,7 +1,8 @@
 import React from 'react'
 import "./globals.css";
 import { ReactNode } from 'react';
-import { Prompt } from 'next/font/google'
+
+
 
 const layout = ({ children }: { children: ReactNode }) => {
   return (
