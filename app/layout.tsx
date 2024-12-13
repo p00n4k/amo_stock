@@ -1,8 +1,10 @@
 import React from 'react'
 import "./globals.css";
-const layout = ({children}) => {
+import { ReactNode } from 'react';
+
+const layout = ({ children }: { children: ReactNode }) => {
   return (
-   <html>
+    <html>
       <head>
         <title>My App</title>
       </head>
