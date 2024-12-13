@@ -87,7 +87,7 @@ const Page = () => {
   useEffect(() => {
     fetchProductUniotOptions();
   }
-  , []);
+    , []);
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -133,131 +133,128 @@ const Page = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const increaseQuantity = () => {
-    setQuantityInput((prevQuantity) => (parseInt(prevQuantity) + 1).toString());
-  };
 
   return (
     <div className="px-10 py-10">
       <h1 className="title">Amo</h1>
       <form className="form" onSubmit={handleSearch}>
-    
-    {/* Product ID Section */}
-    <div className="form-section">
-      <h5>รหัสสินค้า</h5>
-      <input 
-        type="text" 
-        value={idInput} 
-        placeholder="กรุณากรอกรหัสสินค้า" 
-        onChange={(e) => setIdInput(e.target.value)} 
-      />
-    </div>
-    
-    {/* Product Info Section */}
-    <div className="form-section">
-      <h5>รายละเอียดสินค้า</h5>
-      <input 
-        type="text" 
-        value={productInfoInput} 
-        placeholder="กรุณากรอกรายละเอียดสินค้า" 
-        onChange={(e) => setProductInfoInput(e.target.value)} 
-      />
-    </div>
-    
-    {/* Quantity Filter Section */}
-    <div className="form-section">
-      <h5>กรองจำนวนสินค้า</h5>
-      
+
+        {/* Product ID Section */}
+        <div className="form-section">
+          <h5>รหัสสินค้า</h5>
+          <input
+            type="text"
+            value={idInput}
+            placeholder="กรุณากรอกรหัสสินค้า"
+            onChange={(e) => setIdInput(e.target.value)}
+          />
+        </div>
+
+        {/* Product Info Section */}
+        <div className="form-section">
+          <h5>รายละเอียดสินค้า</h5>
+          <input
+            type="text"
+            value={productInfoInput}
+            placeholder="กรุณากรอกรายละเอียดสินค้า"
+            onChange={(e) => setProductInfoInput(e.target.value)}
+          />
+        </div>
+
+        {/* Quantity Filter Section */}
+        <div className="form-section">
+          <h5>กรองจำนวนสินค้า</h5>
 
 
 
-      
-      <div className="quantity-filter-container">
-  {/* Button */}
-  <button 
-    onClick={() => 
-      setQuantityFilter((prev) => (prev === "greater" ? "less" : "greater"))
-    } 
-    className={`quantity-filter-button ${quantityFilter === "greater" ? "greater" : "less"}`}
-  >
-    {quantityFilter === "greater" ? "มากกว่า" : "น้อยกว่า"}
-  </button>
-  
-  {/* Input */}
-  <input 
-    type="number" 
-    value={quantityInput} 
-    placeholder="กรุณากรอกจำนวนสินค้า" 
-    onChange={(e) => setQuantityInput(e.target.value)} 
-    className="quantity-input"
-  />
-</div>
 
-    </div>
-    
-    {/* Product Unit Section */}
-    <div className="form-section">
-      <h5>หน่วยสินค้า</h5>
-      <select 
-        value={productUnitInput} 
-        onChange={(e) => setProductUnitInput(e.target.value)}
-      >
-        <option value="">หน่วย(Unit)</option>
-        {productUnitOptions.map((product_unit) => (
-          <option 
-            key={product_unit.product_unit} 
-            value={product_unit.product_unit}
+
+          <div className="quantity-filter-container">
+            {/* Button */}
+            <button
+              onClick={() =>
+                setQuantityFilter((prev) => (prev === "greater" ? "less" : "greater"))
+              }
+              className={`quantity-filter-button ${quantityFilter === "greater" ? "greater" : "less"}`}
+            >
+              {quantityFilter === "greater" ? "มากกว่า" : "น้อยกว่า"}
+            </button>
+
+            {/* Input */}
+            <input
+              type="number"
+              value={quantityInput}
+              placeholder="กรุณากรอกจำนวนสินค้า"
+              onChange={(e) => setQuantityInput(e.target.value)}
+              className="quantity-input"
+            />
+          </div>
+
+        </div>
+
+        {/* Product Unit Section */}
+        <div className="form-section">
+          <h5>หน่วยสินค้า</h5>
+          <select
+            value={productUnitInput}
+            onChange={(e) => setProductUnitInput(e.target.value)}
           >
-            {product_unit.product_unit}
-          </option>
-        ))}
-      </select>
-    </div>
-    
-    {/* Warehouse Section */}
-    <div className="form-section">
-      <h5 className="mt-2">รหัสคลัง</h5>
-      <select 
-        value={warehouseIdInput} 
-        onChange={(e) => setWarehouseIdInput(e.target.value)}
-      >
-        <option value="">รหัสคลัง</option>
-        {warehouseOptions.map((warehouse) => (
-          <option 
-            key={warehouse.warehouse_id} 
-            value={warehouse.warehouse_id}
-          >
-            {warehouse.warehouse_id}
-          </option>
-        ))}
-      </select>
-    </div>
+            <option value="">หน่วย(Unit)</option>
+            {productUnitOptions.map((product_unit) => (
+              <option
+                key={product_unit.product_unit}
+                value={product_unit.product_unit}
+              >
+                {product_unit.product_unit}
+              </option>
+            ))}
+          </select>
+        </div>
 
-    <button type="submit" className="btn">ค้นหา</button>
-  </form>
+        {/* Warehouse Section */}
+        <div className="form-section">
+          <h5 className="mt-2">รหัสคลัง</h5>
+          <select
+            value={warehouseIdInput}
+            onChange={(e) => setWarehouseIdInput(e.target.value)}
+          >
+            <option value="">รหัสคลัง</option>
+            {warehouseOptions.map((warehouse) => (
+              <option
+                key={warehouse.warehouse_id}
+                value={warehouse.warehouse_id}
+              >
+                {warehouse.warehouse_id}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <button type="submit" className="btn">ค้นหา</button>
+      </form>
 
       {loading && <div className="loading">Loading...</div>}
       {error && <p className="error-message">{error}</p>}
       {productData.map((product, index) => (
-        <ProductDetails 
-          key={index} 
-          productData={product} 
-          productIndex={index + 1 + (page - 1) * 30} 
+        <ProductDetails
+          key={index}
+          productData={product}
+          productIndex={index + 1 + (page - 1) * 30}
         />
       ))}
 
       <div className="pagination-container" style={{ marginBottom: '30px' }}>
-        <button 
-          className="pagination-button" 
-          disabled={page === 1} 
+        <button
+          className="pagination-button"
+          disabled={page === 1}
           onClick={() => handlePageChange(page - 1)}
         >
           Previous
         </button>
         <span className="page-indicator">Page {page} of {totalPages}</span>
-        <button 
-          className="pagination-button" 
-          disabled={page === totalPages} 
+        <button
+          className="pagination-button"
+          disabled={page === totalPages}
           onClick={() => handlePageChange(page + 1)}
         >
           Next
