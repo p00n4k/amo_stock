@@ -21,11 +21,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/api/unit/route.js"
     ],
-    "/api/update-time/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/update-time/route.js"
-    ],
     "/api/amo-stock/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

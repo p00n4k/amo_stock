@@ -156,10 +156,10 @@ const Page = () => {
 
   return (
     <div className="px-10 py-10">
-      <h1 className="title">Amo V2</h1>
-      <p className="latest-time">
+
+      <div className="font-light text-blue-500 text-xs  mb-1.5 flex justify-end">
         {latestTime ? `อัปเดตล่าสุดวันที่: ${latestTime}` : 'Loading time...'}
-      </p>
+      </div>
       <form className="form" onSubmit={handleSearch}>
 
         {/* Product ID Section */}

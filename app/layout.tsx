@@ -29,6 +29,9 @@ const layout = ({ children }: { children: ReactNode }) => {
 
       </head>
       <body >
+        <header>
+          <h1 className='title'>Amo Stock V.2</h1>
+        </header>
         <div className=''></div>
         <div className=''>{children}</div>
       </body>

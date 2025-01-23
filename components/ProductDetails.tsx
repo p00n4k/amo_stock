@@ -7,6 +7,7 @@ interface ProductData {
   product_unit: string;
   warehouse_id: string;
   warehouse_name: string;
+  location: string;
 }
 
 interface ProductDetailsProps {
@@ -44,6 +45,10 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ productData, productInd
           <p className="warehouse_id">
             <span className="warehouse_id-head">คลัง:</span>{' '}
             {productData.warehouse_id} {productData.warehouse_name}
+          </p>
+          <p className="location">
+            <span className="location-head">Location:</span>{' '}
+            {productData.location}
           </p>
 
           <hr />
